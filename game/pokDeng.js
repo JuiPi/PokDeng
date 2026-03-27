@@ -39,16 +39,20 @@ export default class PokDeng {
         console.log("> The dealer got", this.getHand(this.dealerHand));
 
         let result;
-        if(this.getScore(this.playerHand) > this.getScore(this.dealerHand)) {
+
+        const pScore = this.getScore(this.playerHand);
+        const dScore = this.getScore(this.dealerHand);
+
+        if(pScore > dScore) {
             console.log(`> You won!!!, received ${bet} chips\n`);
             result = bet;
         } 
-        else if(this.getScore(this.playerHand) < this.getScore(this.dealerHand)) {
+        else if(pScore < dScore) {
             console.log(`> Dealer wins!, lost ${bet} chips\n`);
             result = -bet;
         }
         else {
-            console.log(`> It's a tie! You get ${bet} chips back\n`);
+            console.log(`> It's a tie! You get your chips back\n`);
             result = 0;
         }
 
