@@ -19,7 +19,7 @@ export default class PokDeng {
                 continue
             }
             else if (card.rank === 'Ace') {
-                score += 10;
+                score += 1;
             }
             else {
                 score += parseInt(card.rank);
